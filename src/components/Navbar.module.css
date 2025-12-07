@@ -1,69 +1,120 @@
-a:hover {
-    text-decoration: none;
-    opacity: 0.7;
-    transition: opacity 0.2s ease;
-}
-
+/* --- BASIS STIJLEN (DESKTOP FIRST) --- */
 .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 2rem;
-    background-color: var(--color-bg);
-    color: var(--color-text);
-    border-bottom: 1px solid var(--color-border);
-
-}
-
-.navList {
-    display: flex;
-    gap: 1.5rem;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-
-.navItem {
-    cursor: pointer;
-    font-weight: 700;
-    color: var(--color-text);
-    transition: opacity 0.2s ease;
-}
-
-.navItem:hover {
-    opacity: 0.7;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: var(--color-bg);
+  border-bottom: 1px solid var(--color-border);
+  position: relative; /* Belangrijk voor positionering mobiel menu */
+  z-index: 100; /* Zorg dat navbar altijd bovenop ligt */
 }
 
 .logo {
-    font-family: var(--font-alternative);
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: var(--color-text);
-    text-decoration: none;
-    letter-spacing: -0.5px;
-    display: flex;
-    align-items: baseline;
+  font-family: var(--font-alternative);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  text-decoration: none;
+  display: flex;
+  align-items: baseline;
+  z-index: 101; /* Logo moet boven het mobiele menu blijven */
 }
 
 .logoAccent {
-    color: var(--color-accent);
-    font-size: 1.8rem;
-    line-height: 0;
-    margin-left: 2px;
+  color: var(--color-accent);
+  font-size: 1.8rem;
+  line-height: 0;
+  margin-left: 2px;
+}
+
+/* De Lijst (Desktop Stijl) */
+.navList {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+}
+
+.navItem a {
+  text-decoration: none;
+  color: var(--color-text);
+  font-weight: 500;
+  font-family: var(--font-body);
+  transition: color 0.2s ease;
+}
+
+.navItem a:hover {
+  color: var(--color-primary);
 }
 
 .separator {
-    color: var(--color-border);
-    font-weight: 300;
+  color: var(--color-border);
 }
 
 .iconItem a {
-    color: var(--color-text);
-    font-size: 1.2rem;
-    display: flex; /* Zorgt dat iconen verticaal centreren */
-    transition: opacity 0.2s ease;
+  color: var(--color-text);
+  font-size: 1.2rem;
+  display: flex;
 }
 
-.iconItem a:hover {
-    opacity: 0.7;
+/* Hamburger Knop (Standaard VERBERGEN op desktop) */
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.8rem;
+  color: var(--color-text);
+  cursor: pointer;
+  z-index: 101; /* Moet boven het menu liggen om te kunnen sluiten */
+}
+
+/* --- MEDIA QUERY: MOBIEL (< 768px) --- */
+@media (max-width: 768px) {
+  
+  /* Toon de hamburger knop */
+  .hamburger {
+    display: block;
+  }
+
+  /* De NavList wordt nu een 'Overlay' */
+  .navList {
+    position: fixed; /* Vast op het scherm */
+    top: 0;
+    right: -100%; /* Verberg rechts buiten beeld */
+    height: 100vh;
+    width: 100%;
+    background-color: var(--color-bg);
+    
+    flex-direction: column; /* Items onder elkaar */
+    justify-content: center; /* In het midden */
+    gap: 2rem;
+    
+    box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+    transition: right 0.3s ease-in-out; /* Schuif animatie */
+  }
+
+  /* Als de class 'open' erbij komt (via React state) */
+  .navList.open {
+    right: 0; /* Schuif het beeld in */
+  }
+
+  /* Mobiele styling voor links (groter) */
+  .navItem a {
+    font-size: 1.5rem;
+    font-weight: 700;
+  }
+
+  /* Verberg separator op mobiel */
+  .separator {
+    display: none;
+  }
+  
+  /* Socials iets groter op mobiel */
+  .iconItem a {
+    font-size: 1.5rem;
+    color: var(--color-primary);
+  }
 }

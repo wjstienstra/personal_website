@@ -1,0 +1,230 @@
+/* src/components/About.module.css */
+
+/* --- Section Container --- */
+.aboutSection {
+  background-color: var(--color-bg); /* Wit */
+  color: var(--color-text);
+  padding: 4rem 1.5rem; /* Iets meer padding aan zijkanten voor mobiel */
+  width: 100%; /* Forceer breedte */
+  overflow: hidden; /* Voorkom horizontale scrollbalken */
+}
+
+.container {
+  max-width: 900px;
+  width: 100%; /* Belangrijk voor mobiel */
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+/* --- Headers --- */
+.sectionTitle {
+  font-family: var(--font-heading); /* Roboto Slab */
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  color: var(--color-primary); /* Teal */
+  text-align: center; /* Gecentreerd */
+}
+
+.sectionSubtitle {
+  font-family: var(--font-body);
+  font-size: 1.1rem;
+  color: #666;
+  margin-bottom: 4rem;
+  max-width: 600px;
+  
+  /* Centreren van het blok en de tekst */
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  line-height: 1.6;
+}
+
+.highlight {
+    font-weight: 700;
+    color: var(--color-text);
+    position: relative;
+    display: inline-block;
+}
+
+.highlight::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: var(--color-accent); /* Goud */
+    opacity: 0.6;
+}
+
+/* --- The Timeline Layout --- */
+.timeline {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.timelineItem {
+    display: grid;
+    /* DESKTOP LAYOUT: 
+       Kolom 1: Jaar (100px) 
+       Kolom 2: Lijn (50px) 
+       Kolom 3: Content (De rest) 
+    */
+    grid-template-columns: 100px 50px 1fr; 
+    gap: 0; /* Geen gap, we regelen ruimte via padding */
+    min-height: 150px;
+}
+
+/* --- Column 1: Desktop Year --- */
+.yearColumn {
+    text-align: right;
+    padding-top: 0.2rem;
+    padding-right: 1rem;
+}
+
+.year {
+    font-family: var(--font-alternative); /* Space Mono */
+    font-weight: 700;
+    color: var(--color-accent); /* Goud */
+    font-size: 0.9rem;
+}
+
+/* --- Mobile Year (Standaard verborgen op desktop) --- */
+.mobileYear {
+    display: none; 
+}
+
+/* --- Column 2: Line & Dot --- */
+.lineColumn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.dot {
+    width: 16px;
+    height: 16px;
+    background-color: var(--color-bg);
+    border: 3px solid var(--color-primary); /* Teal */
+    border-radius: 50%;
+    z-index: 2;
+    margin-top: 5px; /* Uitlijnen met top van tekst */
+    flex-shrink: 0; /* Voorkom dat punt wordt platgedrukt */
+}
+
+.line {
+    flex-grow: 1;
+    width: 2px;
+    background-color: var(--color-border);
+    position: absolute;
+    top: 20px;
+    bottom: -20px; /* Verbindt met volgende punt */
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+}
+
+/* Eerste item krijgt een gouden stip */
+.timelineItem:first-child .dot {
+    background-color: var(--color-accent);
+    border-color: var(--color-accent);
+}
+
+/* Laatste item heeft geen lijn naar beneden nodig, maar CSS overflow:hidden regelt dit vaak al. 
+   Als je wilt dat de lijn stopt bij de laatste stip: */
+.timelineItem:last-child .line {
+    display: none;
+}
+
+/* --- Column 3: Content --- */
+.contentColumn {
+    padding-bottom: 3rem;
+    padding-left: 1rem; /* Afstand tot de lijn */
+}
+
+.itemTitle {
+    font-family: var(--font-heading);
+    font-size: 1.25rem;
+    margin: 0 0 0.5rem 0;
+    color: var(--color-text);
+    line-height: 1.3;
+}
+
+.itemRole {
+    display: block;
+    font-family: var(--font-alternative); /* Space Mono */
+    font-size: 0.85rem;
+    color: #666;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.itemDescription {
+    font-family: var(--font-body);
+    font-size: 1rem;
+    color: #444;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+/* Tags */
+.tagWrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.tag {
+    font-size: 0.75rem;
+    background-color: #f4f4f4;
+    padding: 0.2rem 0.6rem;
+    border-radius: 4px;
+    color: #666;
+    font-weight: 500;
+}
+
+
+/* --- MEDIA QUERY: MOBIEL (< 768px) --- */
+@media (max-width: 768px) {
+    
+    .sectionTitle {
+        font-size: 2rem;
+    }
+
+    /* DE FIX VOOR JOUW PROBLEEM */
+    .timelineItem {
+        /* We veranderen de grid volledig!
+           Kolom 1: Lijn (30px smal)
+           Kolom 2: Content (1fr - Pak ALLE overige ruimte)
+        */
+        grid-template-columns: 40px 1fr;
+    }
+
+    /* Verberg de originele jaar kolom volledig */
+    .yearColumn {
+        display: none;
+    }
+
+    /* Toon het jaar nu in de content kolom */
+    .mobileYear {
+        display: block; /* Nu zichtbaar! */
+        font-family: var(--font-alternative);
+        color: var(--color-accent);
+        font-size: 0.85rem;
+        font-weight: 700;
+        margin-bottom: 0.25rem;
+    }
+
+    /* Content kolom heeft minder padding nodig links, want lijn staat al dichtbij */
+    .contentColumn {
+        padding-left: 0.5rem;
+        padding-right: 0; /* Zeker zijn dat er geen padding rechts is die ruimte eet */
+    }
+    
+    .aboutSection {
+        padding: 3rem 1rem; /* Iets minder padding rondom */
+    }
+}

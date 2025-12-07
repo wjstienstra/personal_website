@@ -31,7 +31,7 @@
 
 .intro {
   font-family: var(--font-alternative); /* Space Mono */
-  font-size: 0.9rem;
+  font-size: 0.7rem;
   color: var(--color-accent); /* Gold */
   letter-spacing: 1px;
   margin-bottom: 2rem;
@@ -89,6 +89,9 @@
 
 
 @media (min-width: 768px) {
+  .intro {
+    font-size: 0.9rem;
+  }
   .headline {
     font-size: 4rem; /* Balanced size on desktop */
   }

@@ -1,0 +1,128 @@
+.heroSection {
+  background-color: var(--color-hero-bg); /* Deep Teal */
+  color: #ffffff;
+  
+  /* FULL SCREEN FIX */
+  width: 100vw; 
+  margin-left: calc(-50vw + 50%);
+  margin-right: calc(-50vw + 50%);
+  min-height: 100vh; /* Forces full viewport height */
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Center vertically */
+  align-items: center;     /* Center horizontally */
+  
+  padding: 0 2rem; /* Side padding just in case */
+  position: relative; /* Needed if we add background textures later */
+}
+
+.container {
+  max-width: 800px; /* Narrower container = More whitespace on sides */
+  width: 100%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 2rem;
+}
+
+/* --- TYPOGRAPHY --- */
+
+.intro {
+  font-family: var(--font-alternative); /* Space Mono */
+  font-size: 0.9rem;
+  color: var(--color-accent); /* Gold */
+  letter-spacing: 1px;
+  margin-bottom: 2rem;
+  text-transform: uppercase;
+  opacity: 0.9;
+}
+
+.separator {
+  color: rgba(255,255,255, 0.4);
+  margin: 0 0.5rem;
+}
+
+.headline {
+  font-family: var(--font-heading); /* Roboto Slab */
+  color: var(--color-bg); /* White for strong contrast */
+  font-size: 3rem; 
+  line-height: 1.2;
+  margin-bottom: 2rem;
+  font-weight: 400; /* LIGHTER WEIGHT - This makes it "Subdued" */
+}
+
+
+.highlight {
+  position: relative;
+  z-index: 1;
+  display: inline-block;
+  white-space: nowrap;
+  /* Text color remains white for readability against the highlight */
+  color: #ffffff; 
+}
+
+.highlight::before {
+  content: '';
+  position: absolute;
+  z-index: -1; /* Behind the text */
+  
+  /* Make it slightly larger than the text */
+  top: -2px;
+  left: -8px;
+  right: -8px;
+  bottom: 0;
+  
+  background-color: var(--color-accent); /* Gold */
+  opacity: 0.7; /* See-through marker effect */
+  
+  /* THE MAGIC: 
+     By using slashes /, we define horizontal and vertical radii separately.
+     This creates that wobbly, non-geometric shape. */
+  border-radius: 255px 15px 225px 15px / 15px 225px 15px 255px;
+  
+  /* Rotate it slightly for the casual look */
+  transform: rotate(-2deg);
+}
+
+
+
+@media (min-width: 768px) {
+  .headline {
+    font-size: 4rem; /* Balanced size on desktop */
+  }
+}
+
+.subtext {
+  font-family: var(--font-body);
+  font-size: 1.15rem;
+  max-width: 500px;
+  margin-bottom: 3rem;
+  font-weight: 300; /* Inter Light */
+  line-height: 1.6;
+}
+
+
+/* Group 2: Tech Stack (Subtle, Informational) */
+.techStackWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.techLabel {
+  font-family: var(--font-alternative); /* Space Mono */
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--color-accent);
+}
+
+.techIcons {
+  display: flex;
+  gap: 1.5rem;
+  font-size: 2rem;
+  color: var(--color-bg);
+}

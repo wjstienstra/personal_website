@@ -1,13 +1,16 @@
 /* --- BASIS STIJLEN (DESKTOP FIRST) --- */
 .navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;
   background-color: var(--color-bg);
   border-bottom: 1px solid var(--color-border);
-  position: relative; /* Belangrijk voor positionering mobiel menu */
-  z-index: 100; /* Zorg dat navbar altijd bovenop ligt */
 }
 
 .logo {
@@ -20,6 +23,7 @@
   align-items: baseline;
   z-index: 101; /* Logo moet boven het mobiele menu blijven */
 }
+
 
 .logoAccent {
   color: var(--color-accent);

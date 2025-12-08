@@ -1,4 +1,5 @@
 import React, { useState } from 'react'; // 1. Import useState
+import { Link } from 'react-router-dom';
 import styles from './Navbar.module.css';
 // 2. Importeer de hamburger (Bars) en sluit (Times) iconen
 import { FaBars, FaTimes, FaGithub, FaLinkedin } from 'react-icons/fa'; 
@@ -14,9 +15,9 @@ function Navbar() {
 
   return (
     <nav className={styles.navbar}>
-      <a href="#" className={styles.logo}>
+      <Link to="/" className={styles.logo}>
         WJ Stienstra<span className={styles.logoAccent}>.</span>
-      </a>
+      </Link>
 
       {/* 4. De Hamburger Knop (Alleen zichtbaar op mobiel via CSS) */}
       <button className={styles.hamburger} onClick={toggleMenu} aria-label="Toggle menu">
@@ -28,10 +29,12 @@ function Navbar() {
       {/* We voegen een extra class 'open' toe als de state true is */}
       <ul className={`${styles.navList} ${isOpen ? styles.open : ''}`}>
         
-        <li className={styles.navItem} onClick={toggleMenu}><a href="#">Home</a></li>
-        <li className={styles.navItem} onClick={toggleMenu}><a href="#projects">Projects</a></li>
-        <li className={styles.navItem} onClick={toggleMenu}><a href="#about">About</a></li>
-        <li className={styles.navItem} onClick={toggleMenu}><a href="#contact">Contact</a></li>
+        <li className={styles.navItem} onClick={toggleMenu}>
+          <Link to="/projects">Projects</Link></li>
+        <li className={styles.navItem} onClick={toggleMenu}>
+          <Link to="/about">About</Link></li>
+        <li className={styles.navItem} onClick={toggleMenu}>
+          <a href="#contact">Contact</a></li>
         
         {/* De Social Icons (ook in het mobiele menu) */}
         <li className={styles.separator}>|</li>

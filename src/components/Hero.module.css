@@ -1,18 +1,12 @@
 .heroSection {
   background-color: var(--color-hero-bg); /* Deep Teal */
   color: #ffffff;
-  
-  /* FULL SCREEN FIX */
-  width: 100vw; 
-  margin-left: calc(-50vw + 50%);
-  margin-right: calc(-50vw + 50%);
-  min-height: 100vh; /* Forces full viewport height */
-  
+  width: 100%; 
+  min-height: 100vh; /* Forces full viewport height */  
   display: flex;
   flex-direction: column;
   justify-content: center; /* Center vertically */
-  align-items: center;     /* Center horizontally */
-  
+  align-items: center;     /* Center horizontally */  
   padding: 0 2rem; /* Side padding just in case */
   position: relative; /* Needed if we add background textures later */
 }

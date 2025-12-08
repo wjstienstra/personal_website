@@ -3,34 +3,35 @@ import styles from './About.module.css';
 
 function About() {
   // The Data: Your journey translated to value
+  // The Data: Your journey translated to value
   const timelineData = [
     {
-      year: "2025",
-      title: "CS50x Computer Science (Harvard)",
-      role: "Full Stack Development",
-      description: "Deep dive into computer science fundamentals (C, Algorithms, Memory). Final Project: A Full Stack Flask application integrating AI to generate news summaries for tracked companies. Proved ability to build complex, data-driven web apps.",
-      tech: ["Flask", "SQL", "AI Integration", "JavaScript"]
+      year: "2024 - Present",
+      title: "Full Stack Development",
+      role: "CS50x & CS50 Python (Harvard)",
+      description: "Made the definitive switch to software engineering. Completed rigorous computer science training. Built a full-stack Flask application with AI integration and a CLI crypto-trading tool. Focus on Python, clean code, and backend logic.",
+      tech: ["Python", "Flask", "React", "SQL"]
     },
     {
-      year: "2024",
-      title: "CS50 Python (Harvard)",
-      role: "Back-end Logic & Automation",
-      description: "Focused on Pythonic programming and data processing. Final Project: A CLI tool analyzing real-time crypto market data via APIs to provide buy/sell signals. Learned to handle external data streams and logic.",
-      tech: ["Python", "APIs", "Data Analysis", "CLI"]
+      year: "2016",
+      title: "Plot Projects",
+      role: "Growth Hacking & Data Intern",
+      description: "Immersed in a tech startup environment. Developed data analysis skills by building custom dashboards and optimizing growth strategies. Bridged the gap between data insights and sales/marketing execution.",
+      tech: ["Data Analysis", "Dashboards", "Growth Hacking", "Startup XP"]
     },
     {
-      year: "2014 - Present",
+      year: "2014 - 2024",
       title: "Staalvlechter Stien",
-      role: "Entrepreneur & Construction Lead",
-      description: "Started as an apprentice, grew to manage complex reinforcement projects across NL, BE, and DE. Developed 'grit', project management skills, and the ability to deliver under strict deadlines and physical constraints.",
-      tech: ["Project Management", "Leadership", "Client Relations"]
+      role: "Construction Lead & Entrepreneur",
+      description: "Started as an apprentice, grew to manage complex reinforcement projects across the Netherlands, Belgium, and Germany. Developed 'grit', leadership skills, and the ability to deliver under strict deadlines and physical constraints.",
+      tech: ["Project Management", "Leadership", "International Operations"]
     },
     {
       year: "2012 - 2014",
       title: "MSc Business Administration",
-      role: "University of Twente", // Or specific uni
-      description: "Specialization in Entrepreneurship. Thesis on 'Open Entrepreneurship in Crowdsourcing Startups'. Developed the ability to analyze business models and understand the commercial context of innovation.",
-      tech: ["Business Strategy", "Research", "Validation"]
+      role: "VU Amsterdam - Entrepreneurship",
+      description: "Specialized in Entrepreneurship. Thesis on 'Open Entrepreneurship in Crowdsourcing Start-ups'. Learned to analyze business models and understand the commercial context of innovation.",
+      tech: ["Business Strategy", "Research", "Crowdsourcing"]
     }
   ];
 

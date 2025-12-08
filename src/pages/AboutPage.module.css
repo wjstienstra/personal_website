@@ -1,0 +1,90 @@
+.pageWrapper {
+  background-color: var(--color-bg);
+  min-height: 100vh;
+  padding: 8rem 2rem 4rem 2rem; /* Ruimte voor de fixed navbar */
+  color: var(--color-text);
+}
+
+.container {
+  max-width: 800px; /* Smalle kolom leest prettiger voor lange tekst */
+  margin: 0 auto;
+}
+
+/* --- Header --- */
+.header {
+  text-align: center;
+  margin-bottom: 5rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.title {
+  font-family: var(--font-heading);
+  font-size: 3rem;
+  color: var(--color-primary); /* Teal */
+  margin-bottom: 1.5rem;
+}
+
+.intro {
+  font-family: var(--font-body);
+  font-size: 1.25rem;
+  line-height: 1.6;
+  color: #555;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* --- Content Sections --- */
+.section {
+  margin-bottom: 4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.subtitle {
+  font-family: var(--font-heading);
+  font-size: 1.8rem;
+  color: var(--color-text);
+  margin-bottom: 1rem;
+  position: relative;
+  display: inline-block;
+}
+
+/* Klein gouden accentje onder de titels */
+.subtitle::after {
+  content: '';
+  display: block;
+  width: 40px;
+  height: 3px;
+  background-color: var(--color-accent);
+  margin-top: 5px;
+}
+
+.textBlock p {
+  font-family: var(--font-body);
+  font-size: 1.1rem;
+  line-height: 1.8; /* Veel ruimte tussen regels leest rustig */
+  color: #444;
+  margin-bottom: 1.5rem;
+}
+
+.textBlock strong {
+  color: var(--color-primary);
+  font-weight: 700;
+}
+
+/* --- Responsive --- */
+@media (max-width: 600px) {
+  .title {
+    font-size: 2.2rem;
+  }
+  
+  .intro {
+    font-size: 1.1rem;
+  }
+  
+  .pageWrapper {
+    padding-top: 6rem;
+  }
+}

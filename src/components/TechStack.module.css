@@ -1,9 +1,12 @@
 .stackSection {
-  background-color: var(--color-text); /* Charcoal (#2C2C2C) */
-  padding: 6rem 2rem;
+  background-color: var(--color-primary-medium); /* The 'Bridge' color */
+  padding: 8rem 2rem;
   width: 100%;
-  color: #ffffff; /* Standaard tekst wit */
+  color: #ffffff;
   position: relative;
+  
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .container {
@@ -14,16 +17,19 @@
 .sectionTitle {
   font-family: var(--font-heading);
   font-size: 2.5rem;
-  color: #ffffff; /* Wit knalt het best op Charcoal */
+  color: #ffffff;
   text-align: center;
-  margin-bottom: 0.5rem;
+  margin-bottom: 1rem;
 }
 
 .subtitle {
   font-family: var(--font-body);
   text-align: center;
-  color: rgba(255, 255, 255, 0.6); /* Iets gedimd wit */
-  margin-bottom: 4rem;
+  color: rgba(255, 255, 255, 0.6);
+  margin-bottom: 5rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .grid {
@@ -34,34 +40,40 @@
 
 /* --- DARK CARD STYLING --- */
 .card {
-  /* We gebruiken een semi-transparante witte laag. 
-     Op een donkere achtergrond ziet dit eruit als donkergrijs/lichter charcoal. */
-  background: rgba(255, 255, 255, 0.05); 
+  /* Semi-transparent background */
+  background: rgba(255, 255, 255, 0.03); 
   
   padding: 2rem;
-  border-radius: var(--border-radius);
+  border-radius: 8px; /* Hardcoded or var(--border-radius) */
   
-  /* Een hele subtiele border voor definitie */
-  border: 1px solid rgba(255, 255, 255, 0.1); 
+  /* Subtle initial border */
+  border: 1px solid rgba(255, 255, 255, 0.05); 
   
-  transition: transform 0.2s ease, border-color 0.2s ease, background-color 0.2s ease;
+  /* Smooth transition for the glow effect */
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .card:hover {
-  transform: translateY(-5px);
-  /* Iets lichter bij hover */
-  background-color: rgba(255, 255, 255, 0.08); 
-  border-color: var(--color-accent); /* Goud */
+  transform: translateY(-5px); 
+  
+  /* 2. We add a shadow in the same Gold color creates the 'Glow' */
+  box-shadow: 0 10px 30px -10px rgba(192, 160, 98, 0.3); 
+  
+  /* Optional: slightly lighten the background */
+  background-color: rgba(255, 255, 255, 0.05);
 }
 
 .categoryTitle {
-  font-family: var(--font-alternative); /* Space Mono */
+  font-family: var(--font-alternative);
   font-size: 1rem;
-  color: var(--color-accent); /* Goud */
+  color: var(--color-accent); /* Gold */
   margin-bottom: 1.5rem;
   padding-bottom: 0.5rem;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Subtiele lijn */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   display: inline-block;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-weight: 700;
 }
 
 .list {
@@ -73,24 +85,30 @@
 .listItem {
   display: flex;
   align-items: center;
-  gap: 0.8rem;
+  gap: 1rem;
   font-family: var(--font-body);
   font-size: 1rem;
-  margin-bottom: 0.8rem;
-  color: rgba(255, 255, 255, 0.9); /* Bijna wit */
+  margin-bottom: 1rem;
+  color: rgba(255, 255, 255, 0.8);
+  transition: color 0.2s ease;
+}
+
+.card:hover .listItem {
+  color: #ffffff; /* Text becomes brighter when card is hovered */
 }
 
 /* Icons styling */
 .icon {
-  font-size: 1.2rem;
+  font-size: 1.25rem;
   display: flex;
-  
-  /* Belangrijk: Sommige icons zijn zwart van zichzelf, die zie je niet op charcoal.
-     We geven ze hier standaard een lichte kleur, tenzij ze hun eigen kleur hebben. */
-  color: #fff; 
+  align-items: center;
+  justify-content: center;
+  color: vrgba(255, 255, 255, 0.8); /* Make icons Gold by default for consistency */
+  opacity: 0.8;
+  transition: all 0.3s ease;
 }
 
-/* Specifieke kleur overrides voor iconen als je wilt dat ze 'echt' blijven,
-   maar vaak is wit op donker juist heel chique. 
-   React Icons hebben vaak al hun eigen SVG fill colors. 
-   Als ze wegvallen, forceert de regel hierboven ze naar wit. */
+.card:hover .icon {
+  opacity: 1;
+  transform: scale(1.1); /* Icons pop slightly on hover */
+}

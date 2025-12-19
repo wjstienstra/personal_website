@@ -11,10 +11,11 @@
   --color-text: #2C2C2C;  /* Charcoal */
   --color-border: #E0E0E0;
  
-  --color-hero-bg: #1E4D55; 
   --color-primary: #1E4D55; /* We match primary to hero for consistency */
+  --color-primary-medium: #13343A; 
+  --color-primary-dark: #081619;
   --color-accent: #C0A062;  /* Gold/Beige still works great for small details */
-  
+  --color-accent-glow: rgba(192, 160, 98, 0.15);
 
   /* --- Fonts --- */
   --font-body: 'Inter', sans-serif;
@@ -55,4 +56,8 @@ h1, h2, h3, h4, h5, h6 {
 a {
   color: var(--color-primary); /* Gebruik je accentkleur voor links */
   text-decoration: none;
+}
+
+html { 
+  scroll-behavior: smooth;
 }

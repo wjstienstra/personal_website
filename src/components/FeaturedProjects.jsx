@@ -2,32 +2,38 @@ import React from 'react';
 import styles from './FeaturedProjects.module.css';
 import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
 
+import cs50xScreenshot from '../assets/cs50x_screenshot.png'; // Placeholder image path
+import cs50pScreenshot from '../assets/cs50p_screenshot.png'; // Placeholder image path
+
 function FeaturedProjects() {
   // Project Data: focused on the "Problem vs Solution" narrative
   const projects = [
     {
       id: 1,
-      title: "AI News Aggregator",
-      category: "Full Stack Web App",
-      description: "In a world of information overload, tracking specific company news is time-consuming. I built a solution that aggregates real-time data and uses AI to generate concise summaries, allowing users to stay informed in minutes instead of hours.",
-      techStack: ["Python", "Flask", "OpenAI API", "SQLAlchemy", "Jinja2"],
+      title: "AI Stock News Feed",
+      category: "CS50x Final Project • Full Stack Web App",
+      description: "A personalized investor dashboard that aggregates real-time company news via the Finnhub API and uses Google's Gemini LLM to generate concise summaries. To optimize API usage and improve load times, I implemented a custom caching system within the SQLite database.",
+      techStack: ["Python", "Flask", "Gemini API", "SQLite", "Bootstrap"],
       links: {
-        github: "https://github.com/wjstienstra", // Add specific repo link
-        demo: null // Add live link if available
+        github: "https://github.com/wjstienstra/CS50x-Final-Project", // Add specific repo link
+        demo: "https://youtu.be/dqWKdGMhh_E"
       },
+      image: cs50xScreenshot,
       imageColor: "#1E4D55" // Placeholder color (Teal) until you have screenshots
     },
     {
       id: 2,
-      title: "Construction Logistics App",
-      category: "Mobile Application (React Native)",
-      description: "Developing a cross-platform mobile solution for a construction client to streamline administrative tasks. The app replaces paper-based workflows with a digital interface, reducing errors and saving on-site reporting time.",
-      techStack: ["React Native", "Expo", "JavaScript", "Mobile UX"],
+      title: "Bitcoin Strategic Analyzer",
+      category: "CS50p Final Project • Data Engineering",
+      // Focus op: Data aggregatie, Scraping, en complexe logica
+      description: "A Python-based analytical tool that calculates a 'Strategic Buy Score' (0-100) using live market data. The script combines API integration with web scraping (BeautifulSoup) to analyze three weighted metrics: Halving Cycles, Price Drawdown, and Market Sentiment.",
+      techStack: ["Python", "BeautifulSoup", "APIs", "Algorithms"],
       links: {
-        github: "https://github.com/wjstienstra",
-        demo: null
+        github: "https://github.com/wjstienstra/CS50p-Final-Project", // Vul hier de link naar je CS50p repo in
+        demo: "https://youtu.be/0q0WB7jf-oU" // Je YouTube video!
       },
-      imageColor: "#C0A062" // Placeholder color (Gold)
+      image: cs50pScreenshot,
+      imageColor: "#13343A" 
     }
   ];
 
@@ -38,19 +44,27 @@ function FeaturedProjects() {
         <h2 className={styles.sectionTitle}>Featured Work</h2>
         
         <div className={styles.projectList}>
-          {projects.map((project, index) => (
+          {projects.map((project) => (
             // We use the index to determine layout direction (even vs odd)
             <article key={project.id} className={styles.projectItem}>
               
               {/* Image Column */}
               <div className={styles.imageColumn}>
-                <div 
+                {/* Check: Is er een echt plaatje? Toon die. Anders de placeholder kleur. */}
+                {project.image ? (
+                  <img 
+                    src={project.image} 
+                    alt={`${project.title} Screenshot`} 
+                    className={styles.projectImage} // We maken zo een class hiervoor
+                  />
+                ) : (
+                  <div 
                     className={styles.imagePlaceholder} 
                     style={{ backgroundColor: project.imageColor }}
-                >
-                    {/* Ideally, put an <img /> here later */}
-                    <span className={styles.placeholderText}>{project.title} Screenshot</span>
-                </div>
+                  >
+                    <span className={styles.placeholderText}>{project.title}</span>
+                  </div>
+                )}
               </div>
 
               {/* Content Column */}

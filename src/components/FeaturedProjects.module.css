@@ -1,7 +1,9 @@
+/* --- BASE LAYOUT & TYPOGRAPHY --- */
 .projectSection {
-  padding: 6rem 2rem;
-  background-color: #fafafa; /* Slightly off-white to separate from 'About' */
-  color: var(--color-text);
+  padding: 8rem 2rem;
+  background-color: var(--color-bg); /* Wit (Level 0) */
+  color: var(--color-text);          /* Charcoal */
+  /* Geen borders nodig hier, want het contrast met de vorige/volgende sectie is groot genoeg */
 }
 
 .container {
@@ -12,69 +14,78 @@
 .sectionTitle {
   font-family: var(--font-heading);
   font-size: 2.5rem;
-  margin-bottom: 4rem;
-  color: var(--color-primary);
-  text-align: center; /* Or left aligned if you prefer */
+  margin-bottom: 5rem;
+  color: var(--color-primary); /* Teal titel op witte achtergrond = Klassiek & Clean */
+  text-align: center;
+  font-weight: 800;
 }
 
 .projectList {
   display: flex;
   flex-direction: column;
-  gap: 6rem; /* Large space between projects */
+  gap: 8rem;
 }
 
-/* --- THE CARD LAYOUT --- */
+/* --- THE CARD GRID --- */
 .projectItem {
   display: grid;
-  grid-template-columns: repeat(12, 1fr); /* 12-column grid for precise overlap control */
+  grid-template-columns: repeat(12, 1fr);
   align-items: center;
 }
 
-/* --- CONTENT COLUMN --- */
+/* Content Column Styling */
 .contentColumn {
-  grid-column: 7 / -1; /* Occupies right half (col 7 to end) */
-  grid-row: 1; /* Same row as image */
-  z-index: 2; /* Content sits ON TOP of the image */
-  text-align: right; /* Default alignment for first item */
+  grid-column: 7 / -1; 
+  grid-row: 1;
+  z-index: 2; /* Ligt BOVENOP de foto */
+  text-align: right;
 }
 
 .category {
   font-family: var(--font-alternative);
-  color: var(--color-accent);
+  color: var(--color-accent); /* Gold */
   font-size: 0.85rem;
+  font-weight: 700;
   margin-bottom: 0.5rem;
   display: block;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
 .title {
   font-family: var(--font-heading);
   font-size: 1.8rem;
   margin-bottom: 1.5rem;
-  color: var(--color-text);
+  color: var(--color-text); /* Charcoal */
+
+  text-shadow: 0 0 20px rgba(255, 255, 255, 0.9), 
+               0 0 10px rgba(255, 255, 255, 0.9);
 }
 
 .descriptionBox {
-  background-color: var(--color-hero-bg); /* Deep Teal background for text */
-  color: #fff;
+  background-color: var(--color-primary); /* Deep Teal */
+  color: #ffffff; /* Witte tekst is hier verplicht voor contrast */
   padding: 1.5rem;
-  border-radius: var(--border-radius);
-  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  border-radius: 4px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
   margin-bottom: 1.5rem;
   line-height: 1.6;
   font-size: 1rem;
 }
 
+/* Tech Stack & Links */
 .techList {
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
-  justify-content: flex-end; /* Align to right */
+  justify-content: flex-end; 
   list-style: none;
   padding: 0;
   margin-bottom: 1.5rem;
   font-family: var(--font-alternative);
   font-size: 0.85rem;
-  color: #555;
+  color: var(--color-text);
+  opacity: 0.8; /* Iets zachter dan de hoofdtitel */
 }
 
 .links {
@@ -86,90 +97,76 @@
 
 .links a {
   color: var(--color-text);
-  transition: color 0.2s ease;
+  transition: all 0.2s ease;
 }
 
 .links a:hover {
   color: var(--color-accent);
+  transform: translateY(-2px);
 }
 
 /* --- IMAGE COLUMN --- */
 .imageColumn {
-  grid-column: 1 / 8; /* Occupies left side (col 1 to 8) - Overlaps slightly */
+  grid-column: 1 / 8; 
   grid-row: 1;
   position: relative;
   z-index: 1;
   height: 100%;
 }
 
+.projectImage {
+  width: 100%;
+  height: 360px; /* Zelfde hoogte als je placeholder */
+  object-fit: cover; /* Zorgt dat de foto niet uitrekt */
+  border-radius: 4px;
+  box-shadow: 0 10px 30px -10px rgba(0,0,0,0.15);
+  transition: transform 0.3s ease;
+}
+
+.imageColumn:hover .projectImage {
+  transform: scale(1.02);
+}
+
 .imagePlaceholder {
   width: 100%;
-  height: 350px; /* Fixed height for consistency */
-  border-radius: var(--border-radius);
+  height: 360px;
+  border-radius: 4px;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: rgba(255,255,255,0.5);
   font-weight: 700;
+  color: rgba(255,255,255, 0.8);
+  box-shadow: 0 10px 30px -10px rgba(0,0,0,0.15); /* Zachte schaduw op wit */
   transition: transform 0.3s ease;
-  
-  /* Create a cool filter effect later for real images */
-  /* filter: grayscale(100%) contrast(1.2); */
 }
 
 .imageColumn:hover .imagePlaceholder {
   transform: scale(1.02);
-  /* filter: none; */
 }
 
-/* --- ZIG-ZAG LOGIC (The "Even" Child) --- */
+/* --- ZIG-ZAG (Even Child) --- */
 .projectItem:nth-child(even) .contentColumn {
-  grid-column: 1 / 7; /* Content moves to left */
+  grid-column: 1 / 7; 
   text-align: left;
 }
 
 .projectItem:nth-child(even) .imageColumn {
-  grid-column: 6 / -1; /* Image moves to right */
+  grid-column: 6 / -1; 
 }
 
-.projectItem:nth-child(even) .techList {
-  justify-content: flex-start; /* Align tags left */
-}
-
+.projectItem:nth-child(even) .techList,
 .projectItem:nth-child(even) .links {
-  justify-content: flex-start; /* Align icons left */
+  justify-content: flex-start;
 }
 
-/* --- MOBILE RESPONSIVENESS (< 768px) --- */
+/* --- MOBILE --- */
 @media (max-width: 768px) {
-  .projectItem {
-    display: flex;
-    flex-direction: column; /* Stack them */
-    max-width: 500px;
-    margin: 0 auto;
+  .projectSection { padding: 4rem 1.5rem; }
+  .projectItem { display: flex; flex-direction: column; gap: 2rem; }
+  .contentColumn, .imageColumn, .projectItem:nth-child(even) .contentColumn {
+    grid-column: auto; width: 100%; text-align: left;
   }
-  
-  .contentColumn, .imageColumn, 
-  .projectItem:nth-child(even) .contentColumn, 
-  .projectItem:nth-child(even) .imageColumn {
-    grid-column: auto;
-    width: 100%;
-    text-align: left; /* Reset alignment */
-  }
-
-  .techList, .links, 
-  .projectItem:nth-child(even) .techList, 
-  .projectItem:nth-child(even) .links {
-    justify-content: flex-start;
-  }
-  
-  .imagePlaceholder {
-    height: 250px;
-    margin-bottom: 1.5rem;
-  }
-  
-  .descriptionBox {
-    padding: 1rem;
-    font-size: 0.95rem;
-  }
+  .techList, .links, .projectItem:nth-child(even) .techList { justify-content: flex-start; }
+  .imagePlaceholder { height: 250px; }
+  .descriptionBox { text-align: left; padding: 1rem; }
 }

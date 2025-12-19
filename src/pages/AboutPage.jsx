@@ -1,7 +1,8 @@
 import React from 'react';
 import styles from './AboutPage.module.css';
-// Je kunt hier t.z.t. andere foto's importeren, bijv:
-// import triathlonImg from '../assets/triathlon.jpg';
+
+import { FaMobileAlt, FaCode, FaLayerGroup, FaChartBar, FaUniversity } from 'react-icons/fa';
+import { FaPython } from 'react-icons/fa6'; // Of 'react-icons/fab'
 
 function AboutPage() {
   return (
@@ -67,6 +68,99 @@ function AboutPage() {
               This diverse experience allows me to communicate effectively with stakeholders from all walks of life. 
               I understand the business goals behind the code, and I know how to deliver value in the real world.
             </p>
+          </div>
+        </section>
+
+        <section className={styles.section}>
+          <div className={styles.certContainer}>
+            <h3>Certifications</h3>
+            
+            <div className={styles.badgesGrid}>
+              
+              {/* --- FreeCodeCamp --- */}
+
+              <a 
+                href="https://www.freecodecamp.org/certification/wjstienstra/responsive-web-design" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className={styles.badgeCard}
+              >
+                <FaMobileAlt className={styles.icon} />
+                <div className={styles.badgeInfo}>
+                  <span className={styles.badgeTitle}>Responsive Web Design</span>
+                  <span className={styles.badgeIssuer}>FreeCodeCamp</span>
+                </div>
+              </a>
+
+              <a 
+                href="https://www.freecodecamp.org/certification/wjstienstra/javascript-algorithms-and-data-structures" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className={styles.badgeCard}
+              >
+                <FaCode className={styles.icon} />
+                <div className={styles.badgeInfo}>
+                  <span className={styles.badgeTitle}>JavaScript Algorithms</span>
+                  <span className={styles.badgeIssuer}>FreeCodeCamp</span>
+                </div>
+              </a>
+
+              <a 
+                href="https://www.freecodecamp.org/certification/wjstienstra/front-end-development-libraries" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className={styles.badgeCard}
+              >
+                <FaLayerGroup className={styles.icon} />
+                <div className={styles.badgeInfo}>
+                  <span className={styles.badgeTitle}>Front End Libraries</span>
+                  <span className={styles.badgeIssuer}>FreeCodeCamp</span>
+                </div>
+              </a>
+
+              <a 
+                href="https://www.freecodecamp.org/certification/wjstienstra/data-visualization" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className={styles.badgeCard}
+              >
+                <FaChartBar className={styles.icon} />
+                <div className={styles.badgeInfo}>
+                  <span className={styles.badgeTitle}>Data Visualization</span>
+                  <span className={styles.badgeIssuer}>FreeCodeCamp</span>
+                </div>
+              </a>
+
+              {/* --- CS50 (Harvard) --- */}
+
+              <a 
+                href="https://certificates.cs50.io/98c4599b-16a2-4750-8a59-f338edf10ab2.pdf?size=letter" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className={styles.badgeCard}
+              >
+                <FaUniversity className={styles.icon} />
+                <div className={styles.badgeInfo}>
+                  <span className={styles.badgeTitle}>CS50x: Computer Science</span>
+                  <span className={styles.badgeIssuer}>Harvard University</span>
+                </div>
+              </a>
+
+              <a 
+                href="https://certificates.cs50.io/d0f3359f-554a-49e3-ab25-e972196ca776.pdf?size=letter" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className={styles.badgeCard}
+              >
+                {/* Als fa-python niet werkt, gebruik dan 'fas fa-terminal' */}
+                <FaPython className={styles.icon} />
+                <div className={styles.badgeInfo}>
+                  <span className={styles.badgeTitle}>CS50P: Python Programming</span>
+                  <span className={styles.badgeIssuer}>Harvard University</span>
+                </div>
+              </a>
+
+            </div>
           </div>
         </section>
 

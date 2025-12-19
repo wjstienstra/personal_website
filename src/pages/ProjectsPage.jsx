@@ -1,93 +1,133 @@
 import React from 'react';
 import styles from './ProjectsPage.module.css';
-import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
+import { FaGithub, FaExternalLinkAlt, FaPython, FaLaptopCode } from 'react-icons/fa';
+
+import JavaScript_Calculator from '../assets/JavaScript_Calculator.png';
+import Pomodoro_clock from '../assets/Pomodoro_clock.png';
+import Scatter_Plot from '../assets/Scatter_Plot.png';
+import CS50p_screenshot from '../assets/CS50p_screenshot.png';
+import CS50x_screenshot from '../assets/CS50x_screenshot.png';
+
+// Data Array met al je projecten
+const projectsData = [
+  // --- De "Big Three" (CodePen) ---
+  {
+    id: 1,
+    title: 'Productivity Session Timer',
+    category: 'React App',
+    description: 'Een configureerbare timer die wisselt tussen werk- en pauzesessies. Gebouwd om React Lifecycle Methods en state management diepgaand te leren beheersen.',
+    tags: ['React', 'Moment.js', 'Bootstrap'],
+    links: {
+      demo: 'https://codepen.io/wjstienstra/full/KEBxKv', 
+      code: 'https://codepen.io/wjstienstra/pen/KEBxKv'
+    },
+    image: Pomodoro_clock
+  },
+  {
+    id: 2,
+    title: 'Doping in Cycling Visualization',
+    category: 'Data Visualization',
+    description: 'Interactieve scatterplot die historische wielren-data plot. Visualiseert de correlatie tussen toptijden en dopingbeschuldigingen middels D3.js.',
+    tags: ['D3.js', 'JSON', 'SVG'],
+    links: {
+      demo: 'https://codepen.io/wjstienstra/full/agbbNe', // Vul ID in
+      code: 'https://codepen.io/wjstienstra/pen/agbbNe'
+    },
+    image: Scatter_Plot
+  },
+  {
+    id: 3,
+    title: 'React Calculator',
+    category: 'Web Tool',
+    description: 'Een volledig functionele rekenmachine. Bevat complexe logica voor decimalen, volgorde van bewerkingen en input-validatie.',
+    tags: ['React', 'JavaScript Logic', 'CSS Grid'],
+    links: {
+      demo: 'https://codepen.io/wjstienstra/full/arbMPa',
+      code: 'https://codepen.io/wjstienstra/pen/arbMPa'
+    },
+    image: JavaScript_Calculator
+  },
+  // --- CS50 Final Projects (GitHub) ---
+  {
+    id: 4,
+    title: 'CS50x Final Project', 
+    category: 'Full Stack Web App',
+    description: 'Mijn afstudeerproject voor CS50x. Een webapplicatie die [BESCHRIJF KORT WAT HET DOET, BIJV: aandelen trackt / sportuitslagen bijhoudt].',
+    tags: ['Python', 'Flask', 'SQL', 'HTML/CSS'],
+    links: {
+      // Als je geen live demo hebt, laat je deze null of leeg
+      demo: null, 
+      code: 'https://github.com/wjstienstra/CS50x-Final-Project'
+    },
+    image: CS50x_screenshot
+  },
+  {
+    id: 5,
+    title: 'CS50P Final Project',
+    category: 'Python Automation',
+    description: 'Eindproject voor de Python specialisatie. Een command-line tool die [BESCHRIJF FUNCTIE, BIJV: PDF bestanden converteert / data scrapet].',
+    tags: ['Python', 'Pytest', 'Libraries'],
+    links: {
+      demo: null,
+      code: 'https://github.com/wjstienstra/NAAM-VAN-REPO'
+    },
+    image: CS50p_screenshot
+  }
+];
 
 function ProjectsPage() {
-  // Manual Archive Data
-  // This allows you to list things that aren't on GitHub yet, or private work.
-  const allProjects = [
-    {
-      year: "2025",
-      title: "AI News Aggregator",
-      madeAt: "CS50x Final Project",
-      builtWith: ["Flask", "Python", "SQL", "Jinja2"],
-      link: "https://github.com/wjstienstra", // Can be null if private
-    },
-    {
-      year: "2024",
-      title: "Crypto Trading CLI",
-      madeAt: "CS50 Python",
-      builtWith: ["Python", "Pandas", "APIs"],
-      link: "https://github.com/wjstienstra",
-    },
-    {
-      year: "2024",
-      title: "Construction Logistics App",
-      madeAt: "Freelance Client",
-      builtWith: ["React Native", "Expo", "Firebase"],
-      link: null, // Private client work
-    },
-    {
-      year: "2023",
-      title: "Portfolio v1",
-      madeAt: "Personal",
-      builtWith: ["HTML", "CSS", "JavaScript"],
-      link: "https://github.com/wjstienstra",
-    },
-     {
-      year: "2016",
-      title: "Growth Dashboard",
-      madeAt: "Plot Projects",
-      builtWith: ["Excel", "VBA", "Analytics"],
-      link: null, 
-    },
-  ];
-
   return (
     <div className={styles.pageWrapper}>
       <div className={styles.container}>
         
         <header className={styles.header}>
-          <h1 className={styles.title}>Archive</h1>
-          <p className={styles.subtitle}>A list of things I’ve built.</p>
+          <h1 className={styles.title}>Projects</h1>
+          <p className={styles.intro}>
+            A collection of web applications, data visualizations, and scripts built during my journey from FreeCodeCamp to Harvard's CS50.
+          </p>
         </header>
 
-        {/* The Table Layout */}
-        <div className={styles.tableContainer}>
-            <table className={styles.table}>
-                <thead>
-                    <tr>
-                        <th className={styles.yearCol}>Year</th>
-                        <th className={styles.titleCol}>Project</th>
-                        <th className={styles.madeCol}>Made at</th>
-                        <th className={styles.techCol}>Built with</th>
-                        <th className={styles.linkCol}>Link</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {allProjects.map((project, index) => (
-                        <tr key={index} className={styles.row}>
-                            <td className={styles.yearCell}>{project.year}</td>
-                            <td className={styles.titleCell}>{project.title}</td>
-                            <td className={styles.madeCell}>{project.madeAt}</td>
-                            <td className={styles.techCell}>
-                                <div className={styles.techTags}>
-                                    {project.builtWith.map((tech, i) => (
-                                        <span key={i} className={styles.techTag}>{tech}</span>
-                                    ))}
-                                </div>
-                            </td>
-                            <td className={styles.linkCell}>
-                                {project.link && (
-                                    <a href={project.link} target="_blank" rel="noopener noreferrer" aria-label="View Project">
-                                        <FaGithub className={styles.icon} />
-                                    </a>
-                                )}
-                            </td>
-                        </tr>
-                    ))}
-                </tbody>
-            </table>
+        <div className={styles.projectsList}>
+          {projectsData.map((project) => (
+            <article key={project.id} className={styles.projectCard}>
+              
+              <div className={styles.cardHeader}>
+                <span className={styles.category}>{project.category}</span>
+                <h2 className={styles.projectTitle}>{project.title}</h2>
+              </div>
+
+              <div className={styles.imageContainer}>
+                <img src={project.image} alt={project.title} className={styles.projectImage} /> 
+              </div>
+
+              <div className={styles.cardBody}>
+                <p className={styles.description}>{project.description}</p>
+                
+                <div className={styles.tags}>
+                  {project.tags.map(tag => (
+                    <span key={tag} className={styles.tag}>#{tag}</span>
+                  ))}
+                </div>
+
+                <div className={styles.links}>
+                  {/* Alleen tonen als er een demo link is */}
+                  {project.links.demo && (
+                    <a href={project.links.demo} target="_blank" rel="noopener noreferrer" className={styles.linkBtn}>
+                      <FaExternalLinkAlt style={{marginRight: '8px'}}/> Live Demo
+                    </a>
+                  )}
+                  
+                  {/* Code link (GitHub of CodePen) */}
+                  <a href={project.links.code} target="_blank" rel="noopener noreferrer" className={styles.linkBtnOutline}>
+                    {/* Toon GitHub icoon als het een github link is, anders Code icoon */}
+                    {project.links.code.includes('github') ? <FaGithub style={{marginRight: '8px'}}/> : <FaLaptopCode style={{marginRight: '8px'}}/>} 
+                    View Code
+                  </a>
+                </div>
+              </div>
+
+            </article>
+          ))}
         </div>
 
       </div>

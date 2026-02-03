@@ -4,9 +4,7 @@ import styles from './TechStack.module.css';
 // Using ONLY standard FontAwesome icons to prevent white-screen crashes
 import { 
   FaReact, 
-  FaJs, 
   FaCss3Alt, 
-  FaBootstrap, 
   FaPython, 
   FaDatabase, 
   FaServer,      // Good generic icon for Flask/Backend
@@ -16,45 +14,37 @@ import {
   FaChartLine,   // For Strategic Thinking
   FaHandshake,   // For Stakeholder Comms
   FaLightbulb,   // For Entrepreneurship
-  FaTasks        // For Project Mgmt
+  FaTasks,        // For Project Mgmt
+  FaLock
 } from 'react-icons/fa';
 
 function TechStack() {
   const skills = [
     {
-      category: "Frontend",
+      category: "Modern Frontend",
       items: [
-        { name: "React", icon: <FaReact /> },
-        { name: "JavaScript (ES6+)", icon: <FaJs /> },
-        { name: "CSS Modules", icon: <FaCss3Alt /> }, 
-        { name: "Bootstrap", icon: <FaBootstrap /> },
+        { name: "Next.js (App Router)", icon: <FaReact /> },
+        { name: "TypeScript", icon: <FaCode /> },
+        { name: "Recharts / Data Vizualtion", icon: <FaChartLine /> }, 
+        { name: "Tailwind / CSS Modules", icon: <FaCss3Alt /> },
       ]
     },
     {
       category: "Backend & Data",
       items: [
         { name: "Python", icon: <FaPython /> },
-        { name: "Flask", icon: <FaServer /> }, // Using Server icon as safe Flask alternative
-        { name: "SQL / SQLAlchemy", icon: <FaDatabase /> }, 
-        { name: "Web Scraping", icon: <FaCode /> }, // Code icon fits scripting
+        { name: "Supabase(PostgreSQL)", icon: <FaDatabase /> }, 
+        { name: "API Integration", icon: <FaServer /> }, // Code icon fits scripting
+        { name: "Authentication & Security", icon: <FaLock /> },
       ]
     },
     {
-      category: "Tools & Core",
+      category: "The 'Business' Edge",
       items: [
-        { name: "Git & GitHub", icon: <FaGitAlt /> },
-        { name: "VS Code", icon: <FaCode /> },
-        { name: "Command Line", icon: <FaTerminal /> },
-        { name: "Problem Solving", icon: <FaLightbulb /> }, 
-      ]
-    },
-    {
-      category: "Business Value",
-      items: [
-        { name: "Entrepreneurship", icon: <FaLightbulb /> },
-        { name: "Project Mgmt", icon: <FaTasks /> },
-        { name: "Stakeholder Comms", icon: <FaHandshake /> },
-        { name: "Strategic Thinking", icon: <FaChartLine /> },
+        { name: "Entrepreneurial Mindset", icon: <FaLightbulb /> },
+        { name: "Project Leadership", icon: <FaTasks /> },
+        { name: "Stakeholder Mgmt", icon: <FaHandshake /> },
+        { name: "Strategic Analysis", icon: <FaChartLine /> },
       ]
     }
   ];
@@ -64,7 +54,8 @@ function TechStack() {
       <div className={styles.container}>
         <h2 className={styles.sectionTitle}>The Toolbox</h2>
         <p className={styles.subtitle}>
-            Bridging the gap between technical logic and business strategy.
+            From heavy machinery to lightweight frameworks. <br /> 
+            <span style={{ opacity: 0.8 }}>The right equipment to get the job done.</span>
         </p>
 
         <div className={styles.grid}>

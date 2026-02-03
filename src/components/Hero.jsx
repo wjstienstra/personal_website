@@ -7,25 +7,20 @@ function Hero() {
   return (
     <section className={styles.heroSection}>
       <div className={styles.container}>
-        
-        {/* 1. THE INTRO: Small, spaced out, Space Mono */}
+    
         <span className={styles.intro}>
-           MSc BA: Entrepreneurship <span className={styles.separator}>//</span> Self-taught Developer
+           MSc BA: Entrepreneurship <span className={styles.separator}>//</span> Full Stack Engineer
         </span>
-        
-        {/* 2. THE HEADLINE: Lighter weight, focused on text color */}
+
         <h1 className={styles.headline}>
-          Business Mindset.<br />
-          <span className={styles.highlight}>Technical Craft.</span>
+          From Concrete<br />
+          <span className={styles.highlight}>To Clean Code.</span>
         </h1>
-        
-        {/* 3. THE SUBTEXT: Clean and readable */}
+
         <p className={styles.subtext}>
-          Bridging the gap between commercial goals and deployed software solutions.
+          Whether on a construction site or a web app, I take pride in quality. I bring a builder's discipline to software engineering: reliable, logical, and built to last.
         </p>
 
-        {/* 4. SECONDARY INFO: Tech Stack (The "Proof") */}
-        {/* Visual separation: smaller, ghosted, labeled */}
         <div className={styles.techStackWrapper}>
             <span className={styles.techLabel}>Core Stack</span>
             <div className={styles.techIcons}>
@@ -35,7 +30,6 @@ function Hero() {
                 <SiJavascript />
             </div>
         </div>
-     
 
       </div>
     </section>

@@ -64,7 +64,26 @@
   text-decoration: none;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+  font-size: 1rem;
+  line-height: 1.5;
 }
+
+.copyHint {
+  display: block;
+  margin-top: 0.75rem;
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  color: #6b7280; /* Nog iets lichter grijs voor de hint */
+  transform: translateY(-5px);
+  transition: all 0.3s ease;
+}
+
+.ctaSection:hover .copyHint {
+  opacity: 0.8;
+  transform: translateY(0);
+}
+
 
 .ctaButton:hover {
   transform: translateY(-3px);

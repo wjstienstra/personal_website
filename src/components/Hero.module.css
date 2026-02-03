@@ -1,7 +1,7 @@
 .heroSection {
   background-color: var(--color-primary); /* Deep Teal */
   color: #ffffff;
-  width: 100%; 
+  width: 100%;
   min-height: 100vh; /* Forces full viewport height */  
   display: flex;
   flex-direction: column;
@@ -41,7 +41,7 @@
 .headline {
   font-family: var(--font-heading); /* Roboto Slab */
   color: var(--color-bg); /* White for strong contrast */
-  font-size: 3rem; 
+  font-size: 3rem;
   line-height: 1.2;
   margin-bottom: 2rem;
   font-weight: 400; /* LIGHTER WEIGHT - This makes it "Subdued" */
@@ -54,28 +54,28 @@
   display: inline-block;
   white-space: nowrap;
   /* Text color remains white for readability against the highlight */
-  color: #ffffff; 
+  color: #ffffff;
 }
 
 .highlight::before {
   content: '';
   position: absolute;
   z-index: -1; /* Behind the text */
-  
+ 
   /* Make it slightly larger than the text */
   top: -2px;
   left: -8px;
   right: -8px;
   bottom: 0;
-  
+ 
   background-color: var(--color-accent); /* Gold */
   opacity: 0.7; /* See-through marker effect */
-  
-  /* THE MAGIC: 
+ 
+  /* THE MAGIC:
      By using slashes /, we define horizontal and vertical radii separately.
      This creates that wobbly, non-geometric shape. */
   border-radius: 255px 15px 225px 15px / 15px 225px 15px 255px;
-  
+ 
   /* Rotate it slightly for the casual look */
   transform: rotate(-2deg);
 }
@@ -110,7 +110,7 @@
 }
 
 .techLabel {
-  font-family: var(--font-alternative); /* Space Mono */
+  font-family: var(--font-alternative); /* Space Mono */ 
   font-size: 0.75rem;
   text-transform: uppercase;
   letter-spacing: 2px;
@@ -121,5 +121,5 @@
   display: flex;
   gap: 1.5rem;
   font-size: 2rem;
-  color: var(--color-bg);
+  color: var(--color-bg); /* White */
 }

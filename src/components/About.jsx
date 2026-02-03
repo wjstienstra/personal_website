@@ -2,35 +2,33 @@ import React from 'react';
 import styles from './About.module.css';
 
 function About() {
-  // The Data: Your journey translated to value
-  // The Data: Your journey translated to value
   const timelineData = [
     {
-      year: "2024 - Present",
-      title: "Full Stack Development",
-      role: "CS50x & CS50 Python (Harvard)",
-      description: "Made the definitive switch to software engineering. Completed rigorous computer science training. Built a full-stack Flask application with AI integration and a CLI crypto-trading tool. Focus on Python, clean code, and backend logic.",
-      tech: ["Python", "Flask", "React", "SQL"]
+      year: "2025 - Present",
+      title: "Full Stack Engineer",
+      role: "Open for Work / Personal Projects",
+      description: "Building a production-grade client portal for a private crypto fund using React and Next.js. Implemented complex financial visualizations using Recharts and Supabase.",
+      tech: ["Next.js", "TypeScript", "Recharts", "React", "Supabase"]
     },
     {
-      year: "2016",
-      title: "Plot Projects",
-      role: "Growth Hacking & Data Intern",
-      description: "Immersed in a tech startup environment. Developed data analysis skills by building custom dashboards and optimizing growth strategies. Bridged the gap between data insights and sales/marketing execution.",
-      tech: ["Data Analysis", "Dashboards", "Growth Hacking", "Startup XP"]
+      year: "2024 - 2025",
+      title: "Harvard University / Career Switch",
+      role: "Computer Science (CS50x & CS50p)",
+      description: "The definitive switch to software engineering. Completed rigorous CS curriculum, mastering low-level concepts (C, pointers, Memory Management) before specializing in modern Python web development (Flask).",
+      tech: ["Python", "C", "SQL", "Flask", "Algorithms", "Data Structures"]
     },
     {
-      year: "2014 - 2024",
+      year: "2014 - Present",
       title: "Staalvlechter Stien",
-      role: "Construction Lead & Entrepreneur",
-      description: "Started as an apprentice, grew to manage complex reinforcement projects across the Netherlands, Belgium, and Germany. Developed 'grit', leadership skills, and the ability to deliver under strict deadlines and physical constraints.",
-      tech: ["Project Management", "Leadership", "International Operations"]
+      role: "Owner / Construction Lead",
+      description: "Managed complex, large-scale reinforcement projects. Responsible for quality, logistics, stakeholder management and leading teams under strict deadlines.",
+      tech: ["Project Management", "Operations", "Leadership", "Technical execution"]
     },
     {
       year: "2012 - 2014",
       title: "MSc Business Administration",
       role: "VU Amsterdam - Entrepreneurship",
-      description: "Specialized in Entrepreneurship. Thesis on 'Open Entrepreneurship in Crowdsourcing Start-ups'. Learned to analyze business models and understand the commercial context of innovation.",
+      description: "Specialized in Entrepreneurship. Thesis on 'Open Entrepreneurship in Crowdsourcing Start-ups'. Developed the analytical skills to dissect business models and understand the commercial context of technical innovation.",
       tech: ["Business Strategy", "Research", "Crowdsourcing"]
     }
   ];
@@ -81,6 +79,12 @@ function About() {
                 </div>
             ))}
         </div>
+
+          <div className={styles.ctaWrapper} style={{ marginTop: '3rem', textAlign: 'center' }}>
+            <a href="/about" className={styles.ctaButton}>
+                Read full story &rarr;
+            </a>
+</div>
 
       </div>
     </section>

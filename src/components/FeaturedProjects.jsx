@@ -8,6 +8,7 @@ import cs50pScreenshot from '../assets/cs50p_screenshot.png'; // Placeholder ima
 function FeaturedProjects() {
   // Project Data: focused on the "Problem vs Solution" narrative
   const projects = [
+    
     {
       id: 1,
       title: "AI Stock News Feed",

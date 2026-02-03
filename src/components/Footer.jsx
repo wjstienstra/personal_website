@@ -1,9 +1,18 @@
 import React from 'react';
 import styles from './Footer.module.css';
-import { FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa';
+import { FaGithub, FaLinkedin, FaEnvelope, FaCopy, FaCheck } from 'react-icons/fa';
 
 function Footer() {
   const currentYear = new Date().getFullYear();
+  const [copied, setCopied] = React.useState(false);
+  const email = "wjstienstra@gmail.com";
+
+  const handleCopyEmail = () => {
+    navigator.clipboard.writeText(email).then(() => {
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000); // Reset after 2 seconds
+    });
+  };
 
   return (
     <footer id="contact" className={styles.footer}>
@@ -13,12 +22,22 @@ function Footer() {
         <div className={styles.ctaSection}>
             <h2 className={styles.ctaTitle}>Ready to build something robust?</h2>
             <p className={styles.ctaText}>
-                I am currently open for new opportunities as a Full Stack Developer.
-                Whether you have a question or just want to say hi, I'll try my best to get back to you!
+                I am currently open for full-time opportunities as a Full Stack Engineer. Looking for a developer who understands both the code and the business case? Let's talk.
             </p>
-            <a href="mailto:wjstienstra@gmail.com" className={styles.ctaButton}>
-                Say Hello <FaEnvelope className={styles.btnIcon} />
-            </a>
+
+            {/* De Smart Copy Button */}
+            <button 
+                onClick={handleCopyEmail} 
+                className={styles.ctaButton}
+                title="Click to copy email"
+            >
+                {/* Wissel icoon en tekst op basis van status */}
+                {copied ? <FaCheck className={styles.btnIcon} /> : <FaEnvelope className={styles.btnIcon} />}
+                <span style={{ marginLeft: '8px' }}>
+                    {copied ? "Email Copied!" : email}
+                </span>
+            </button>
+            <span className={styles.copyHint}>Click to copy email address</span>
         </div>
 
         <div className={styles.divider}></div>
@@ -41,7 +60,7 @@ function Footer() {
                     <FaGithub />
                 </a>
                 <a 
-                    href="https://linkedin.com/in/jouw-profiel" 
+                    href="https://linkedin.com/in/willemjanstienstra" 
                     target="_blank" 
                     rel="noopener noreferrer" 
                     aria-label="LinkedIn"

@@ -1,167 +1,109 @@
 import React from 'react';
 import styles from './AboutPage.module.css';
+import { FaDownload, FaArrowRight } from 'react-icons/fa';
 
-import { FaMobileAlt, FaCode, FaLayerGroup, FaChartBar, FaUniversity } from 'react-icons/fa';
-import { FaPython } from 'react-icons/fa6'; // Of 'react-icons/fab'
+// Import je bikepacking foto hier
+import bikeImg from '../assets/ierland.jpeg'; // Zorg dat je deze hebt
 
 function AboutPage() {
   return (
     <div className={styles.pageWrapper}>
-      <div className={styles.container}>
-        
-        {/* HEADER: The Personal Intro */}
+
+      <div className={styles.heroBanner}>
+          <img src={bikeImg} alt="Cycling in Ireland" className={styles.bannerImage} />
+      </div>
+
+      <div className={styles.container}>        
+        {/* HEADER */}
         <header className={styles.header}>
-          <h1 className={styles.title}>More than just code.</h1>
+          <h1 className={styles.title}>Built to last.</h1>
           <p className={styles.intro}>
-            From construction sites to musical compositions, my journey has never been linear. 
-            But one thread connects it all: <strong>The urge to create.</strong>
+            From building concrete foundations to architecting software solutions. The materials have changed, but the principles remain:
+            <strong> Structure, stability, and getting the job done.</strong>
           </p>
         </header>
 
-        {/* SECTION 1: The Origin (Willie Wortel) */}
-        <section className={styles.section}>
-          <div className={styles.textBlock}>
-            <h2 className={styles.subtitle}>The Inventor's Mindset</h2>
+        {/* SECTION 1: The Origin */}
+        <section className={styles.textSection}>
+          <h2 className={styles.subtitle}>The Entrepreneurial Mindset</h2>
+          <p>
+            I've always had the urge to create. As a kid, I wanted to be Willie Wortel (Gyro Gearloose)—inventing things from scratch. That curiosity to <span className={styles.highlight}>build new things</span> never left.</p>
+          <p>
+            During my Master's in Entrepreneurship—where I analyzed business models for my thesis, I became fascinated by software. How code is the <span className={styles.highlight}>ultimate leverage</span> to turn abstract ideas into scalable reality. I dove into the startup world as a growth hacker and even tried to launch my own company, all while working in construction to pay the bills—something I had started doing during university.</p>
+          <p>
+            I love to learn and take on new challenges, but looking back, it's obvious I was spread too thin. Great ideas require focused execution, and I've always had a wide range of interests—from running an investment club to training for a triathlon. I shelved the startup idea, but I kept coming back to programming. Entrepreneurship and investing taught me how to analyze value, but I didn't want to read about or pitch ideas. I wanted to <span className={styles.highlight}>engineer</span> them.</p>            
+        </section>
+
+        {/* SECTION 2: The Construction Experience (USP) */}
+        <section className={styles.highlightSection}>
+          <div className={styles.highlightContent}>
+            <h2 className={styles.subtitle}>Why a former <span className={styles.highlight}>Steel Fixer</span> might be a good fit.</h2>
             <p>
-              As a kid, I had a vivid imagination. I dreamt of becoming an inventor, a sort of 
-              "Willie Wortel" (Gyro Gearloose). I realized early on that creating something new 
-              was my guiding principle.
+                Working in construction as a project lead taught me skills that bootcamps can't teach. It wasn't just about heavy lifting; it was about <strong>precision engineering</strong>, about delivering under time pressure. Translating complex blueprints and managing both people and deadlines.
             </p>
-            <p>
-              Whether it's finding a smarter solution on a construction site or debugging a complex 
-              Python script, that childhood curiosity is still what drives me today. I don't just 
-              want to use software; I want to understand how it works and build it better.
-            </p>
+            <ul className={styles.learningList}>
+                <li>
+                    <strong>From Blueprint to Reality:</strong> Plans on paper are perfect; reality is not. I learned to spot structural flaws early and find creative solutions with the resources at hand. I bring this <span className={styles.highlight}>pragmatic creativity</span> to software: strict on architecture, but flexible in execution.
+                </li>
+                <li>
+                    <strong>The Communication Bridge:</strong> I’ve managed large teams and navigated stakeholders ranging from architects to laborers. 
+                    I know how to translate abstract business goals into actionable tasks for the team—<span className={styles.highlight}>bridging the gap</span> between the boardroom and the build.
+                </li>
+                <li>
+                    <strong>High-Stakes Deployment:</strong> In construction you can't "undo" a concrete pour. This taught me a rigorous approach to <span className={styles.highlight}>quality control</span>. I build robustly, test thoroughly, and don't rely on hotfixes.
+                </li>
+                <li>
+                    <strong>Pressure Management:</strong> I’ve managed teams in rain, snow, and strict deadlines. 
+                    Debugging a server error is stressful, but it’s nothing compared to a finishing a floor while concrete is already being poured. I learned to <span className={styles.highlight}>stay calm</span> when the heat is on.
+                </li>
+            </ul>
           </div>
         </section>
 
-        {/* SECTION 2: The Discipline (Sports & Music) */}
-        <section className={`${styles.section} ${styles.reverse}`}>
-           {/* If you have a photo of triathlon/music, putting it here would be awesome */}
-           {/* <div className={styles.imageBlock}><img src={triathlonImg} /></div> */}
-           
-          <div className={styles.textBlock}>
-            <h2 className={styles.subtitle}>Endurance & Creativity</h2>
-            <p>
-              <strong>Triathlon:</strong> Training for a triathlon taught me that big goals are achieved 
-              through small, consistent steps. It requires discipline, grit, and the mental fortitude 
-              to keep going when things get tough—skills that transfer directly to solving difficult coding problems.
-            </p>
-            <p>
-              <strong>Music:</strong> Writing music is about structure, rhythm, and flow. 
-              Surprisingly, writing clean code feels very similar. It’s about composing logic 
-              that is not only functional but also elegant and readable.
-            </p>
-          </div>
-        </section>
 
-        {/* SECTION 3: The World View (Travel & Business) */}
-        <section className={styles.section}>
-          <div className={styles.textBlock}>
-            <h2 className={styles.subtitle}>Global Perspective</h2>
-            <p>
-              My background isn't typical. I hold an <strong>MSc in Entrepreneurship</strong> and have 
-              managed construction projects across the Netherlands, Belgium, and Germany. 
-              I've traveled through India and Nepal, experiencing everything from silent meditation to earthquakes.
-            </p>
-            <p>
-              This diverse experience allows me to communicate effectively with stakeholders from all walks of life. 
-              I understand the business goals behind the code, and I know how to deliver value in the real world.
-            </p>
-          </div>
-        </section>
 
-        <section className={styles.section}>
-          <div className={styles.certContainer}>
-            <h3>Certifications</h3>
-            
-            <div className={styles.badgesGrid}>
-              
-              {/* --- FreeCodeCamp --- */}
-
-              <a 
-                href="https://www.freecodecamp.org/certification/wjstienstra/responsive-web-design" 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                className={styles.badgeCard}
-              >
-                <FaMobileAlt className={styles.icon} />
-                <div className={styles.badgeInfo}>
-                  <span className={styles.badgeTitle}>Responsive Web Design</span>
-                  <span className={styles.badgeIssuer}>FreeCodeCamp</span>
+        {/* SECTION 3: Personal / Hobbies (Met Foto!) */}
+        <section className={styles.personalSection}>            
+            <div className={styles.personalText}>
+                <h2 className={styles.subtitle}>Offline Mode</h2>
+                <p>
+                    When I’m not coding, I’m usually testing my endurance or my logic.
+                </p>
+                
+                <div className={styles.hobbyItem}>
+                    <h3>🚲 Bikepacking & Endurance</h3>
+                    <p>
+                        I love self-supported cycling trips and pushing my limits. Whether it's crossing the Alps or exploring local trails, 
+                        it teaches you to prepare for the unexpected and just keep pedaling.
+                    </p>
                 </div>
-              </a>
 
-              <a 
-                href="https://www.freecodecamp.org/certification/wjstienstra/javascript-algorithms-and-data-structures" 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                className={styles.badgeCard}
-              >
-                <FaCode className={styles.icon} />
-                <div className={styles.badgeInfo}>
-                  <span className={styles.badgeTitle}>JavaScript Algorithms</span>
-                  <span className={styles.badgeIssuer}>FreeCodeCamp</span>
+                <div className={styles.hobbyItem}>
+                    <h3>📈 The Investor</h3>
+                    <p>
+                        Running a private investment club is more than just a hobby. It sharpens my analytical skills and teaches me about human psychology and how to make decisions with imperfect knowledge. 
+                    </p>
                 </div>
-              </a>
 
-              <a 
-                href="https://www.freecodecamp.org/certification/wjstienstra/front-end-development-libraries" 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                className={styles.badgeCard}
-              >
-                <FaLayerGroup className={styles.icon} />
-                <div className={styles.badgeInfo}>
-                  <span className={styles.badgeTitle}>Front End Libraries</span>
-                  <span className={styles.badgeIssuer}>FreeCodeCamp</span>
+                <div className={styles.hobbyItem}>
+                    <h3>♟️ Music & Strategy</h3>
+                    <p>
+                        From playing chess to composing music: I'm always looking for patterns. 
+                        Programming is simply the most powerful language to express those patterns.
+                    </p>
                 </div>
-              </a>
-
-              <a 
-                href="https://www.freecodecamp.org/certification/wjstienstra/data-visualization" 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                className={styles.badgeCard}
-              >
-                <FaChartBar className={styles.icon} />
-                <div className={styles.badgeInfo}>
-                  <span className={styles.badgeTitle}>Data Visualization</span>
-                  <span className={styles.badgeIssuer}>FreeCodeCamp</span>
-                </div>
-              </a>
-
-              {/* --- CS50 (Harvard) --- */}
-
-              <a 
-                href="https://certificates.cs50.io/98c4599b-16a2-4750-8a59-f338edf10ab2.pdf?size=letter" 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                className={styles.badgeCard}
-              >
-                <FaUniversity className={styles.icon} />
-                <div className={styles.badgeInfo}>
-                  <span className={styles.badgeTitle}>CS50x: Computer Science</span>
-                  <span className={styles.badgeIssuer}>Harvard University</span>
-                </div>
-              </a>
-
-              <a 
-                href="https://certificates.cs50.io/d0f3359f-554a-49e3-ab25-e972196ca776.pdf?size=letter" 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                className={styles.badgeCard}
-              >
-                {/* Als fa-python niet werkt, gebruik dan 'fas fa-terminal' */}
-                <FaPython className={styles.icon} />
-                <div className={styles.badgeInfo}>
-                  <span className={styles.badgeTitle}>CS50P: Python Programming</span>
-                  <span className={styles.badgeIssuer}>Harvard University</span>
-                </div>
-              </a>
-
             </div>
-          </div>
+        </section>
+
+        {/* SECTION 4: CV Download */}
+        <section className={styles.ctaSection}>
+            <div className={styles.divider}></div>
+            <p className={styles.ctaText}>
+                Want to see the formal timeline?
+            </p>
+            <a href="/WJ_Stienstra_Resume.pdf" download className={styles.downloadBtn}>
+                <FaDownload className={styles.btnIcon} /> Download Resume
+            </a>
         </section>
 
       </div>

@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './Footer.module.css';
-import { FaGithub, FaLinkedin, FaEnvelope, FaCopy, FaCheck } from 'react-icons/fa';
+import { FaGithub, FaLinkedin, FaEnvelope, FaCheck, FaFileDownload } from 'react-icons/fa';
 
 function Footer() {
   const currentYear = new Date().getFullYear();
@@ -18,8 +18,7 @@ function Footer() {
     <footer id="contact" className={styles.footer}>
       <div className={styles.container}>
         
-        {/* Top Section: Call to Action */}
-        <div className={styles.ctaSection}>
+          <div className={styles.ctaSection}>
             <h2 className={styles.ctaTitle}>Ready to build something robust?</h2>
             <p className={styles.ctaText}>
                 I am currently open for full-time opportunities as a Full Stack Engineer. Looking for a developer who understands both the code and the business case? Let's talk.
@@ -50,23 +49,37 @@ function Footer() {
                 <span className={styles.copyright}>&copy; {currentYear} — Built with React & Vite.</span>
             </div>
 
-            <div className={styles.socials}>
+
+            <div className={styles.socialsWrapper}>
                 <a 
-                    href="https://github.com/wjstienstra" 
-                    target="_blank" 
-                    rel="noopener noreferrer" 
-                    aria-label="GitHub"
+                  href="/WJ_Stienstra_Resume.pdf" 
+                  download 
+                  className={styles.resumeLink}
+                  aria-label="Download Resume"
                 >
-                    <FaGithub />
+                   <FaFileDownload /> Resume
                 </a>
-                <a 
-                    href="https://linkedin.com/in/willemjanstienstra" 
-                    target="_blank" 
-                    rel="noopener noreferrer" 
-                    aria-label="LinkedIn"
-                >
-                    <FaLinkedin />
-                </a>
+
+                <div className={styles.verticalDivider}></div>
+                
+                <div className={styles.socials}>
+                    <a 
+                        href="https://github.com/wjstienstra" 
+                        target="_blank" 
+                        rel="noopener noreferrer" 
+                        aria-label="GitHub"
+                    >
+                        <FaGithub />
+                    </a>
+                    <a 
+                        href="https://linkedin.com/in/willemjanstienstra" 
+                        target="_blank" 
+                        rel="noopener noreferrer" 
+                        aria-label="LinkedIn"
+                    >
+                        <FaLinkedin />
+                    </a>
+                </div>
             </div>
         </div>
 

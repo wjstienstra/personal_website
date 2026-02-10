@@ -1,138 +1,209 @@
-/* Container & Algemene Layout */
+/* AboutPage.module.css */
+
+/* --- 1. GLOBAL LAYOUT --- */
 .pageWrapper {
   width: 100%;
-  padding: 2rem 1rem;
-  background-color: #f9f9f9; /* Of wit, afhankelijk van je site thema */
+  padding: 0 0 4rem 0;
+  background-color: var(--color-bg, #f9f9f9);
   min-height: 100vh;
   display: flex;
   justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.heroBanner {
+  width: 100%;
+  height: 450px;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 0;
+}
+
+.bannerImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 60%;
 }
 
 .container {
-  max-width: 900px;
+  max-width: 900px; /* Iets smaller voor betere leesbaarheid tekst */
   width: 100%;
+  padding: 0 1.5rem;
+
+  margin-top: -5rem; /* Trek de container omhoog zodat deze deels over de banner ligt */
+  position: relative; /* Zorgt dat de container boven de banner ligt */
+  z-index: 1;
 }
 
-/* Header Sectie */
+/* --- 2. HEADER TYPOGRAPHY --- */
 .header {
-  text-align: center;
+  background-color: white;
+  padding: 2rem;
+  border-radius: 12px 12px 0 0; /* Alleen bovenkant afgerond */
+  box-shadow: 0 -10px 20px rgba(0, 0, 0, 0.05);
   margin-bottom: 4rem;
 }
 
 .title {
-  font-size: 2.5rem;
+  font-family: var(--font-heading, sans-serif);
+  font-size: 3.5rem;
   font-weight: 800;
-  color: #2d3748; /* Donkergrijs */
-  margin-bottom: 1rem;
+  color: var(--color-text, #1a202c);
+  margin-bottom: 1.5rem;
+  line-height: 1.1;
+  letter-spacing: -1px;
+}
+
+/* De kleur voor "Concrete" of andere highlights */
+.highlight {
+  color: var(--color-accent, #d4af37);
+  font-weight: 700;
 }
 
 .intro {
+  font-family: var(--font-body, sans-serif);
   font-size: 1.25rem;
-  color: #4a5568;
+  color: #4a5568; /* Iets zachter grijs */
+  max-width: 750px;
   line-height: 1.6;
-  max-width: 700px;
-  margin: 0 auto;
 }
 
-/* Content Secties */
-.section {
+/* --- 3. TEXT SECTIONS (Standard) --- */
+.textSection {
   margin-bottom: 4rem;
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
 }
 
 .subtitle {
-  font-size: 1.75rem;
-  color: #2d3748;
+  font-family: var(--font-heading, sans-serif);
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--color-text, #1a202c);
   margin-bottom: 1rem;
-  border-bottom: 2px solid #e2e8f0;
-  padding-bottom: 0.5rem;
-  display: inline-block;
 }
 
-.textBlock p {
-  margin-bottom: 1rem;
+p {
+  font-family: var(--font-body, sans-serif);
+  font-size: 1.1rem;
+  color: #2d3748;
+  line-height: 1.8; /* Goede leesbaarheid */
+  margin-bottom: 1.5rem;
+}
+
+/* --- 4. HIGHLIGHT SECTION (Construction Experience) --- */
+.highlightSection {
+  background-color: white; /* Of lichtgrijs #edf2f7 */
+  padding: 3rem;
+  border-radius: 12px;
+  border-left: 5px solid var(--color-accent, #d4af37); /* Accent randje links */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  margin: 5rem 0;
+}
+
+.learningList {
+  list-style: none;
+  padding: 0;
+  margin-top: 1.5rem;
+}
+
+.learningList li {
+  margin-bottom: 1.2rem;
+  padding-left: 2rem; /* Ruimte voor eigen bullet */
+  position: relative;
   font-size: 1.05rem;
-  line-height: 1.7;
+  line-height: 1.6;
   color: #4a5568;
 }
 
-/* Certificaten Grid Sectie */
-.certContainer {
-  background: white;
-  padding: 2rem;
-  border-radius: 12px;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+/* Custom vierkant bullet point */
+.learningList li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.6rem;
+  width: 8px;
+  height: 8px;
+  background-color: var(--color-accent, #d4af37);
+  border-radius: 2px;
 }
 
-.certContainer h3 {
-  font-size: 1.5rem;
-  color: #2d3748;
-  margin-bottom: 1.5rem;
-  text-align: center;
+/* --- 6. PERSONAL SECTION (Hobbies) --- */
+.personalSection {
+  margin-bottom: 6rem;
 }
 
-.badgesGrid {
+.hobbiesGrid {
   display: grid;
-  /* Dit zorgt voor een responsive grid: 1 kolom op mobiel, 2 op groter scherm */
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
-  gap: 1.5rem;
+  /* Automatisch kolommen maken van min. 250px breed */
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2.5rem;
+  margin-top: 2rem;
 }
 
-/* De Badge Card zelf */
-.badgeCard {
+.hobbyItem h3 {
+  font-family: var(--font-heading, sans-serif);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--color-text, #1a202c);
+  margin-bottom: 0.75rem;
   display: flex;
   align-items: center;
-  padding: 1rem;
-  background-color: #f8fafc;
-  border: 1px solid #e2e8f0;
-  border-radius: 8px;
-  transition: all 0.2s ease-in-out;
-  text-decoration: none;
-  color: inherit;
-  cursor: pointer;
+  gap: 0.5rem;
 }
 
-/* Hover effect voor "touchable" gevoel */
-.badgeCard:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-  border-color: #cbd5e0;
-}
-
-/* Styling van de FontAwesome iconen */
-.icon {
-  font-size: 2rem;
-  color: #3182ce; /* Mooi blauw accent */
-  margin-right: 1rem;
-  min-width: 40px; /* Zorgt dat iconen netjes uitlijnen */
-  text-align: center;
-}
-
-.badgeInfo {
-  display: flex;
-  flex-direction: column;
-}
-
-.badgeTitle {
-  font-weight: 700;
-  color: #2d3748;
+.hobbyItem p {
   font-size: 1rem;
+  color: #4a5568;
 }
 
-.badgeIssuer {
-  font-size: 0.85rem;
+/* --- 7. CTA / FOOTER (Resume) --- */
+.ctaSection {
+  text-align: center;
+  margin-top: 4rem;
+  padding-top: 4rem;
+  border-top: 1px solid #e2e8f0; /* Subtiel lijntje erboven */
+}
+
+.ctaText {
+  font-size: 1.25rem;
+  font-weight: 500;
   color: #718096;
-  margin-top: 0.2rem;
+  margin-bottom: 2rem;
 }
 
-/* Responsive aanpassingen voor mobiel */
-@media (max-width: 600px) {
+.downloadBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  background-color: var(--color-primary, #1a202c);
+  color: #fff;
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.downloadBtn:hover {
+  transform: translateY(-2px);
+  background-color: var(--color-accent, #d4af37);
+  color: #1a202c; /* Zwarte tekst op gouden knop voor leesbaarheid */
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* --- 8. MOBILE RESPONSIVENESS --- */
+@media (max-width: 768px) {
   .title {
-    font-size: 2rem;
+    font-size: 2.5rem;
   }
-  .certContainer {
-    padding: 1.5rem 1rem;
+
+  .header {
+    text-align: left; /* Mag ook center zijn als je wilt */
+  }
+
+  .highlightSection {
+    padding: 2rem; /* Minder padding in de box */
   }
 }

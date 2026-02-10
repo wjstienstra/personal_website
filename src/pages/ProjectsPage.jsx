@@ -8,70 +8,74 @@ import Scatter_Plot from '../assets/Scatter_Plot.png';
 import CS50p_screenshot from '../assets/CS50p_screenshot.png';
 import CS50x_screenshot from '../assets/CS50x_screenshot.png';
 
-// Data Array met al je projecten
+// New Array
+
 const projectsData = [
-  // --- De "Big Three" (CodePen) ---
   {
     id: 1,
-    title: 'Productivity Session Timer',
-    category: 'React App',
-    description: 'Een configureerbare timer die wisselt tussen werk- en pauzesessies. Gebouwd om React Lifecycle Methods en state management diepgaand te leren beheersen.',
-    tags: ['React', 'Moment.js', 'Bootstrap'],
+    title: 'AI News Dashboard',
+    category: 'CS50x Final Project',
+    year: "2025",
+    description: 'A personalized news aggregator that filters market noise. It pulls real-time data via the Finnhub API and leverages Google\'s Gemini LLM to generate concise news summaries for investors. Built with a custom SQLite caching layer for efficiency.',
+    tags: ['Python', 'Flask', 'Gemini AI', 'SQLite'],
     links: {
-      demo: 'https://codepen.io/wjstienstra/full/KEBxKv', 
-      code: 'https://codepen.io/wjstienstra/pen/KEBxKv'
+      demo: 'https://youtu.be/dqWKdGMhh_E', 
+      code: 'https://github.com/wjstienstra/CS50x-Final-Project'
     },
-    image: Pomodoro_clock
+    image: CS50x_screenshot
   },
   {
     id: 2,
-    title: 'Doping in Cycling Visualization',
-    category: 'Data Visualization',
-    description: 'Interactieve scatterplot die historische wielren-data plot. Visualiseert de correlatie tussen toptijden en dopingbeschuldigingen middels D3.js.',
-    tags: ['D3.js', 'JSON', 'SVG'],
+    title: 'Bitcoin Strategic Analyzer',
+    category: 'CS50p Final Project',
+    year: "2024",
+    description: 'A pure Python analytical tool that calculates a "Strategic Buy Score" based on on-chain metrics. It combines API data with web scraping logic (BeautifulSoup) to analyze Halving Cycles and Market Sentiment, outputting a clear actionable signal.',
+    tags: ['Python', 'Pandas', 'BeautifulSoup', 'APIs'],
     links: {
-      demo: 'https://codepen.io/wjstienstra/full/agbbNe', // Vul ID in
+      demo: 'https://youtu.be/0q0WB7jf-oU',
+      code: 'https://github.com/wjstienstra/CS50p-Final-Project'
+    },
+    image: CS50p_screenshot
+  },
+
+  {
+    id: 3,
+    title: 'Doping in Cycling',
+    category: 'Data Visualization - FreeCodeCamp',
+    year: "2019",
+    description: 'Interactive scatterplot analyzing historical cycling data. It visualizes the correlation between top climb times and doping allegations using D3.js. Features custom tooltips and responsive axis scaling.',
+    tags: ['D3.js', 'Data Viz', 'JSON', 'SVG'],
+    links: {
+      demo: 'https://codepen.io/wjstienstra/full/agbbNe', 
       code: 'https://codepen.io/wjstienstra/pen/agbbNe'
     },
     image: Scatter_Plot
   },
   {
-    id: 3,
-    title: 'React Calculator',
-    category: 'Web Tool',
-    description: 'Een volledig functionele rekenmachine. Bevat complexe logica voor decimalen, volgorde van bewerkingen en input-validatie.',
-    tags: ['React', 'JavaScript Logic', 'CSS Grid'],
+    id: 4,
+    title: 'JavaScript Calculator',
+    category: 'React Component - FreeCodeCamp',
+    year: "2019",
+    description: 'A fully functional calculator with complex state management. Handles decimal logic, order of operations, and input validation without relying on `eval()`.',
+    tags: ['React', 'Algorithms', 'CSS Grid'],
     links: {
       demo: 'https://codepen.io/wjstienstra/full/arbMPa',
       code: 'https://codepen.io/wjstienstra/pen/arbMPa'
     },
     image: JavaScript_Calculator
   },
-  // --- CS50 Final Projects (GitHub) ---
   {
-    id: 4,
-    title: 'CS50x Final Project', 
-    category: 'Full Stack Web App',
-    description: 'Mijn afstudeerproject voor CS50x. Een webapplicatie die [BESCHRIJF KORT WAT HET DOET, BIJV: aandelen trackt / sportuitslagen bijhoudt].',
-    tags: ['Python', 'Flask', 'SQL', 'HTML/CSS'],
+    id: 1,
+    title: 'Productivity Session Timer',
+    category: 'React App - FreeCodeCamp',
+    year: "2019",
+    description: 'Configurable "Pomodoro" timer, that switches between work and break sessions. Built to deeply understand React Lifecycle Methods and state management.',
+    tags: ['React', 'Moment.js', 'Bootstrap'],
     links: {
-      // Als je geen live demo hebt, laat je deze null of leeg
-      demo: null, 
-      code: 'https://github.com/wjstienstra/CS50x-Final-Project'
+      demo: 'https://codepen.io/wjstienstra/full/KEBxKv', 
+      code: 'https://codepen.io/wjstienstra/pen/KEBxKv'
     },
-    image: CS50x_screenshot
-  },
-  {
-    id: 5,
-    title: 'CS50P Final Project',
-    category: 'Python Automation',
-    description: 'Eindproject voor de Python specialisatie. Een command-line tool die [BESCHRIJF FUNCTIE, BIJV: PDF bestanden converteert / data scrapet].',
-    tags: ['Python', 'Pytest', 'Libraries'],
-    links: {
-      demo: null,
-      code: 'https://github.com/wjstienstra/NAAM-VAN-REPO'
-    },
-    image: CS50p_screenshot
+    image: Pomodoro_clock
   }
 ];
 
@@ -92,7 +96,10 @@ function ProjectsPage() {
             <article key={project.id} className={styles.projectCard}>
               
               <div className={styles.cardHeader}>
-                <span className={styles.category}>{project.category}</span>
+                <div className={styles.metaRow}>
+                  <span className={styles.category}>{project.category}</span>
+                  <span className={styles.year}>{project.year}</span>
+                </div>
                 <h2 className={styles.projectTitle}>{project.title}</h2>
               </div>
 

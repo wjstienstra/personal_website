@@ -92,6 +92,7 @@
 }
 
 .subtext {
+  color: var(--color-bg); /* White */
   font-family: var(--font-body);
   font-size: 1.15rem;
   max-width: 500px;

@@ -2,8 +2,8 @@ import React from 'react';
 import styles from './FeaturedProjects.module.css';
 import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
 
-import cs50xScreenshot from '../assets/cs50x_screenshot.png'; // Placeholder image path
-import cs50pScreenshot from '../assets/cs50p_screenshot.png'; // Placeholder image path
+import cs50xScreenshot from '../assets/cs50x.png'; // Placeholder image path
+import cs50pScreenshot from '../assets/cs50p.png'; // Placeholder image path
 
 function FeaturedProjects() {
   // Project Data: focused on the "Problem vs Solution" narrative

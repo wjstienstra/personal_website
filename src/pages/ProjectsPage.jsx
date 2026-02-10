@@ -3,8 +3,8 @@ import styles from './ProjectsPage.module.css';
 import { FaGithub, FaExternalLinkAlt, FaPython, FaLaptopCode } from 'react-icons/fa';
 
 import JavaScript_Calculator from '../assets/js_calculator.png';
-import Pomodoro_clock from '../assets/pomodoro_clock.png';
-import Scatter_Plot from '../assets/scatter_plot.png';
+import Pomodoro_clock from '../assets/pomodoro_timer.png';
+import Scatter_Plot from '../assets/d3_scatter_plot.png';
 import CS50p_screenshot from '../assets/cs50p_screenshot.png';
 import CS50x_screenshot from '../assets/cs50x_screenshot.png';
 

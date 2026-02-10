@@ -64,13 +64,17 @@
 
 .descriptionBox {
   background-color: var(--color-primary); /* Deep Teal */
-  color: #ffffff; /* Witte tekst is hier verplicht voor contrast */
+  color: #fff; /* Witte tekst is hier verplicht voor contrast */
   padding: 1.5rem;
   border-radius: 4px;
   box-shadow: 0 10px 30px rgba(0,0,0,0.15);
   margin-bottom: 1.5rem;
   line-height: 1.6;
   font-size: 1rem;
+}
+
+.descriptionText {
+  color: #fff !important;
 }
 
 /* Tech Stack & Links */

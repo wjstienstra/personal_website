@@ -74,7 +74,7 @@ function FeaturedProjects() {
                 <h3 className={styles.title}>{project.title}</h3>
                 
                 <div className={styles.descriptionBox}>
-                    <p>{project.description}</p>
+                    <p className={styles.descriptionText}>{project.description}</p>
                 </div>
 
                 <ul className={styles.techList}>

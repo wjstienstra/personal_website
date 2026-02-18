@@ -18,7 +18,7 @@ function Hero() {
         </h1>
 
         <p className={styles.subtext}>
-          Whether on a construction site or a web app, I take pride in quality. I bring a builder's discipline to software engineering: reliable, logical, and built to last.
+          Whether managing a construction site or architecting a web app, I take pride in the craft. I bring a builder's discipline to software engineering: reliable, logical, and built to last.
         </p>
 
         <div className={styles.techStackWrapper}>

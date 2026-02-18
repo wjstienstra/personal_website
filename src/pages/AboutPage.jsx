@@ -2,7 +2,6 @@ import React from 'react';
 import styles from './AboutPage.module.css';
 import { FaDownload, FaArrowRight } from 'react-icons/fa';
 
-// Import je bikepacking foto hier
 import bikeImg from '../assets/ierland.jpeg'; // Zorg dat je deze hebt
 
 function AboutPage() {
@@ -27,11 +26,11 @@ function AboutPage() {
         <section className={styles.textSection}>
           <h2 className={styles.subtitle}>The Entrepreneurial Mindset</h2>
           <p>
-            I've always had the urge to create. As a kid, I wanted to be Willie Wortel (Gyro Gearloose)—inventing things from scratch. That curiosity to <span className={styles.highlight}>build new things</span> never left.</p>
+            I've always had the urge to create. As a kid reading Donald Duck, I wanted to be Gyro Gearloose (Willie Wortel)—inventing things from scratch. That curiosity to <span className={styles.highlight}>build new things</span> never left.</p>
           <p>
-            During my Master's in Entrepreneurship—where I analyzed business models for my thesis, I became fascinated by software. How code is the <span className={styles.highlight}>ultimate leverage</span> to turn abstract ideas into scalable reality. I dove into the startup world as a growth hacker and even tried to launch my own company, all while working in construction to pay the bills—something I had started doing during university.</p>
+            During my Master's in Entrepreneurship, where I analyzed business models for my thesis, I became fascinated by software. How code is the <span className={styles.highlight}>ultimate leverage</span> to turn abstract ideas into scalable reality. I dove into the startup world as a growth hacker and even tried to launch my own company, all while working in construction to pay the bills.</p>
           <p>
-            I love to learn and take on new challenges, but looking back, it's obvious I was spread too thin. Great ideas require focused execution, and I've always had a wide range of interests—from running an investment club to training for a triathlon. I shelved the startup idea, but I kept coming back to programming. Entrepreneurship and investing taught me how to analyze value, but I didn't want to read about or pitch ideas. I wanted to <span className={styles.highlight}>engineer</span> them.</p>            
+            I love to learn and take on new challenges, but looking back, it's obvious I was spread too thin. Great ideas require focused execution, and I've always had a wide range of interests—from running an investment club to training for a triathlon. I shelved the startup idea, but I kept coming back to programming. Entrepreneurship and investing taught me how to analyze value, but I didn't want to just read about or pitch ideas. I wanted to <span className={styles.highlight}>engineer</span> them.</p>            
         </section>
 
         {/* SECTION 2: The Construction Experience (USP) */}
@@ -46,8 +45,7 @@ function AboutPage() {
                     <strong>From Blueprint to Reality:</strong> Plans on paper are perfect; reality is not. I learned to spot structural flaws early and find creative solutions with the resources at hand. I bring this <span className={styles.highlight}>pragmatic creativity</span> to software: strict on architecture, but flexible in execution.
                 </li>
                 <li>
-                    <strong>The Communication Bridge:</strong> I’ve managed large teams and navigated stakeholders ranging from architects to laborers. 
-                    I know how to translate abstract business goals into actionable tasks for the team—<span className={styles.highlight}>bridging the gap</span> between the boardroom and the build.
+                    <strong>The Communication Bridge:</strong> I’ve managed large teams and navigated stakeholders ranging from architects to laborers from across Europe. Leading a multicultural crew taught me to communicate clearly and bridge language barriers. I know how to translate abstract business goals into actionable tasks for the team—<span className={styles.highlight}>bridging the gap</span> between the boardroom and the build.
                 </li>
                 <li>
                     <strong>High-Stakes Deployment:</strong> In construction you can't "undo" a concrete pour. This taught me a rigorous approach to <span className={styles.highlight}>quality control</span>. I build robustly, test thoroughly, and don't rely on hotfixes.

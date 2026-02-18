@@ -21,7 +21,7 @@ function Footer() {
           <div className={styles.ctaSection}>
             <h2 className={styles.ctaTitle}>Ready to build something robust?</h2>
             <p className={styles.ctaText}>
-                I am currently open for full-time opportunities as a Full Stack Engineer. Looking for a developer who understands both the code and the business case? Let's talk.
+                I am currently open for opportunities as a Full Stack Engineer. Looking for a developer who understands both the code and the business case? Let's talk.
             </p>
 
             {/* De Smart Copy Button */}

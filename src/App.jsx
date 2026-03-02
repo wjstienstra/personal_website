@@ -16,6 +16,9 @@ import NotFound from './pages/NotFound';
 // Styles
 import './index.css'; // Or index.css if you removed App.css
 
+// Vercel Analytics
+import { Analytics } from '@vercel/analytics/react';
+
 function App() {
   return (
     <Router>
@@ -32,6 +35,7 @@ function App() {
         </Routes>
 
         <Footer />
+        < Analytics />
       </div>
     </Router>
   );
